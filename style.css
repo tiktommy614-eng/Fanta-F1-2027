@@ -1,107 +1,511 @@
 
+
+/* =================================
+   FANTA F1 2027
+   MAIN DESIGN
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --red: #e10600;
+  --red-dark: #a80000;
+  --black: #101014;
+  --dark: #18181e;
+  --card: #202027;
+  --white: #ffffff;
+  --gray: #a4a4ad;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #101014;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
 }
 
-header {
-  background: #18181e;
-  padding: 30px 8%;
-  border-bottom: 3px solid #e10600;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-header h1 {
-  font-size: 32px;
+/* HEADER */
+
+.site-header {
+  min-height: 85px;
+  padding: 18px 6%;
+  background: #151519;
+  border-bottom: 2px solid var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
 
-header h1 span {
-  color: #e10600;
+.logo span {
+  color: var(--red);
 }
 
-header p {
-  color: #aaa;
+.main-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.main-nav a {
   font-size: 11px;
-  letter-spacing: 3px;
-  margin-top: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #c4c4ca;
+  transition: 0.2s;
 }
 
-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
+.main-nav a:hover {
+  color: var(--red);
 }
+
+.header-button {
+  background: var(--red);
+  padding: 11px 18px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* HERO */
 
 .hero {
-  background: linear-gradient(120deg, #292930, #111115);
-  border-left: 5px solid #e10600;
-  padding: 65px 35px;
-  border-radius: 8px;
+  min-height: 570px;
+  padding: 100px 9%;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #101014 0%, #101014ee 45%, #10101488 100%),
+    repeating-linear-gradient(
+      135deg,
+      #25252c 0px,
+      #25252c 2px,
+      #101014 2px,
+      #101014 12px
+    );
+  border-bottom: 1px solid #333;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.eyebrow,
+.section-heading p,
+.community > p:first-child {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(65px, 10vw, 115px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin: 22px 0;
+}
+
+.hero h1 span {
+  color: var(--red);
 }
 
 .hero h2 {
-  font-size: clamp(30px, 6vw, 55px);
-  font-weight: 900;
-  margin-bottom: 15px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 36px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 
-.hero p {
-  color: #bbb;
+.hero-description {
+  color: #b8b8c0;
+  max-width: 490px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.primary-button {
+  display: inline-block;
+  background: var(--red);
+  padding: 15px 25px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  transition: 0.2s;
+}
+
+.primary-button:hover,
+.header-button:hover {
+  background: var(--red-dark);
+}
+
+.hero-number {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(180px, 30vw, 390px);
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff08;
+  pointer-events: none;
+}
+
+/* GENERAL SECTIONS */
+
+.championship,
+.next-race,
+.standings,
+.drivers,
+.rules {
+  padding: 75px 8%;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+/* STATS */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.stat-card {
+  background: var(--card);
+  border-bottom: 3px solid var(--red);
+  padding: 25px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  background: #292930;
+}
+
+.stat-card span {
+  display: block;
+  color: var(--gray);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.stat-card strong {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+/* NEXT RACE */
+
+.next-race {
+  background: #17171d;
+}
+
+.race-card {
+  background: linear-gradient(110deg, #292930, #1b1b20);
+  border-left: 5px solid var(--red);
+  border-radius: 5px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.race-label {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.race-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.race-card p {
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.race-date {
+  text-align: center;
+  min-width: 100px;
+}
+
+.race-date strong {
+  display: block;
+  color: var(--red);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 55px;
+}
+
+.race-date span {
+  color: var(--gray);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* STANDINGS */
+
+.table-container {
+  overflow-x: auto;
+  background: var(--card);
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 350px;
+}
+
+th {
+  background: #292930;
+  color: var(--red);
+  padding: 18px;
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+td {
+  padding: 22px 18px;
+  border-bottom: 1px solid #33333a;
+  color: #c4c4ca;
+  font-size: 13px;
+}
+
+td[colspan] {
+  text-align: center;
+  padding: 35px 15px;
+}
+
+/* DRIVERS */
+
+.drivers {
+  background: #17171d;
+}
+
+.placeholder-card {
+  background: var(--card);
+  border-radius: 5px;
+  border-left: 4px solid var(--red);
+  padding: 35px;
+}
+
+.placeholder-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px;
+}
+
+.placeholder-card p {
+  color: var(--gray);
+  margin-top: 10px;
+}
+
+/* COMMUNITY */
+
+.community {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(130deg, #310000, #151519 65%);
+}
+
+.community h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(50px, 8vw, 85px);
+  line-height: 0.95;
+  margin: 20px 0;
+}
+
+.community > p:nth-of-type(2) {
+  color: #c4c4ca;
   margin-bottom: 25px;
 }
 
-button {
-  background: #e10600;
-  color: white;
-  border: none;
-  padding: 15px 25px;
-  font-weight: bold;
-  cursor: pointer;
+.coming-soon {
+  display: inline-block;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 9px 15px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
   border-radius: 3px;
 }
 
-button:hover {
-  background: #b90000;
+/* RULES */
+
+.rules > p {
+  color: var(--gray);
+  max-width: 600px;
+  margin-bottom: 25px;
 }
 
-.standings {
-  background: #1b1b22;
-  margin-top: 30px;
-  padding: 30px;
-  border-radius: 8px;
-}
+/* FOOTER */
 
-.standings h2 {
-  border-left: 4px solid #e10600;
-  padding-left: 12px;
-  margin-bottom: 20px;
-}
-
-.standings p {
-  color: #aaa;
-}
-
-footer {
+.site-footer {
+  padding: 40px 8%;
   text-align: center;
-  padding: 30px;
-  color: #777;
-  font-size: 12px;
+  background: #09090b;
+  border-top: 2px solid var(--red);
+}
+
+.site-footer .logo {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.site-footer p {
+  color: var(--gray);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.site-footer .copyright {
+  margin-top: 20px;
+  font-size: 9px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-  header {
-    padding: 25px 20px;
+  .site-header {
+    padding: 15px 5%;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .header-button {
+    padding: 9px 12px;
+    font-size: 9px;
+  }
+
+  .main-nav {
+    gap: 20px;
+  }
+
+  .main-nav a {
+    white-space: nowrap;
+    font-size: 10px;
   }
 
   .hero {
-    padding: 45px 20px;
+    padding: 75px 7%;
+    min-height: 520px;
+  }
+
+  .hero h1 {
+    font-size: 65px;
+  }
+
+  .hero h2 {
+    font-size: 30px;
+  }
+
+  .championship,
+  .next-race,
+  .standings,
+  .drivers,
+  .rules {
+    padding: 55px 6%;
+  }
+
+  .stats-grid {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 17px;
+  }
+
+  .stat-card strong {
+    font-size: 29px;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
+  }
+
+  .race-card {
+    padding: 22px;
+  }
+
+  .race-card h3 {
+    font-size: 24px;
+  }
+
+  .race-date strong {
+    font-size: 40px;
+  }
+
+  .community {
+    padding: 70px 15px;
   }
 }
