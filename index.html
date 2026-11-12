@@ -1,20 +1,261 @@
-  <main>
+  
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FANTA F1 2027 | Our passion, our grid.</title>
+
+  <meta name="description" content="FANTA F1 2027: crea la tua squadra, sfida la community e conquista la vetta della classifica.">
+
+  <meta name="theme-color" content="#101014">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a href="#home" class="logo">
+      FANTA F1 <span>2027</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="#home">HOME</a>
+      <a href="#classifica">CLASSIFICA</a>
+      <a href="#piloti">PILOTI</a>
+      <a href="#calendario">CALENDARIO</a>
+      <a href="#regolamento">REGOLAMENTO</a>
+    </nav>
+
+    <a href="#community" class="header-button">
+      COMMUNITY
+    </a>
+
+  </header>
+
+
+  <main id="home">
+
+    <!-- HERO -->
     <section class="hero">
-      <h2>WELCOME TO THE GRID</h2>
-      <p>Il campionato fantasy della Formula 1.</p>
-      <button>SCOPRI LA CLASSIFICA</button>
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          THE FANTASY CHAMPIONSHIP
+        </p>
+
+        <h1>
+          FANTA F1 <span>2027</span>
+        </h1>
+
+        <h2>
+          OUR PASSION,<br>
+          OUR GRID.
+        </h2>
+
+        <p class="hero-description">
+          Non limitarti a guardare la Formula 1.
+          Diventa protagonista del campionato.
+          Crea la tua squadra, conquista punti
+          e sfida gli altri partecipanti.
+        </p>
+
+        <a href="#classifica" class="primary-button">
+          SCOPRI IL CAMPIONATO →
+        </a>
+
+      </div>
+
+      <div class="hero-number">
+        27
+      </div>
+
     </section>
 
-    <section class="standings">
-      <h2>CLASSIFICA GENERALE</h2>
-      <p>La stagione 2027 sta per iniziare.</p>
+
+    <!-- CAMPIONATO -->
+    <section class="championship">
+
+      <div class="section-heading">
+        <p>SEASON OVERVIEW</p>
+        <h2>IL CAMPIONATO</h2>
+      </div>
+
+      <div class="stats-grid">
+
+        <article class="stat-card">
+          <span>STAGIONE</span>
+          <strong>2027</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>GRAN PREMI</span>
+          <strong>--</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>PARTECIPANTI</span>
+          <strong>--</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>CLASSIFICA</span>
+          <strong>0 PTS</strong>
+        </article>
+
+      </div>
+
     </section>
+
+
+    <!-- PROSSIMA GARA -->
+    <section class="next-race" id="calendario">
+
+      <div class="section-heading">
+        <p>RACE CALENDAR</p>
+        <h2>PROSSIMO GRAN PREMIO</h2>
+      </div>
+
+      <div class="race-card">
+
+        <div>
+          <span class="race-label">NEXT RACE</span>
+          <h3>IN ATTESA DEL CALENDARIO 2027</h3>
+          <p>Il prossimo appuntamento della stagione verrà mostrato qui.</p>
+        </div>
+
+        <div class="race-date">
+          <strong>2027</strong>
+          <span>SEASON</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CLASSIFICA -->
+    <section class="standings" id="classifica">
+
+      <div class="section-heading">
+        <p>CHAMPIONSHIP STANDINGS</p>
+        <h2>CLASSIFICA GENERALE</h2>
+      </div>
+
+      <div class="table-container">
+
+        <table>
+          <thead>
+            <tr>
+              <th>POS.</th>
+              <th>PARTECIPANTE</th>
+              <th>PUNTI</th>
+            </tr>
+          </thead>
+
+          <tbody id="leaderboard">
+
+            <tr>
+              <td colspan="3">
+                La classifica verrà popolata all'inizio
+                del campionato.
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- PILOTI -->
+    <section class="drivers" id="piloti">
+
+      <div class="section-heading">
+        <p>DRIVER LINEUP</p>
+        <h2>I PILOTI</h2>
+      </div>
+
+      <div class="placeholder-card">
+        <h3>THE GRID IS WAITING</h3>
+        <p>
+          Scopri i piloti della stagione 2027
+          e costruisci la tua formazione.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- COMMUNITY -->
+    <section class="community" id="community">
+
+      <p>JOIN THE GRID</p>
+
+      <h2>
+        LA SFIDA<br>
+        INIZIA QUI.
+      </h2>
+
+      <p>
+        Una community, tante squadre,
+        un solo obiettivo: vincere.
+      </p>
+
+      <span class="coming-soon">
+        REGISTRAZIONI IN ARRIVO
+      </span>
+
+    </section>
+
+
+    <!-- REGOLAMENTO -->
+    <section class="rules" id="regolamento">
+
+      <div class="section-heading">
+        <p>HOW TO PLAY</p>
+        <h2>REGOLAMENTO</h2>
+      </div>
+
+      <p>
+        Scopri come creare la tua squadra,
+        accumulare Fantapunti e competere
+        con gli altri partecipanti.
+      </p>
+
+      <span class="coming-soon">
+        REGOLAMENTO 2027 IN PREPARAZIONE
+      </span>
+
+    </section>
+
   </main>
 
-  <footer>
-    <p>FANTA F1 2027 ©</p>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <a href="#home" class="logo">
+      FANTA F1 <span>2027</span>
+    </a>
+
+    <p>OUR PASSION, OUR GRID.</p>
+
+    <p class="copyright">
+      © 2026-2027 FANTA F1. ALL RIGHTS RESERVED.
+    </p>
+
   </footer>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
